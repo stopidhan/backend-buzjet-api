@@ -1,0 +1,38 @@
+@extends('layouts.app')
+@section('title', 'Edit Lokasi')
+@section('content')
+<main class="w-full">
+    <h1 class="font-bold text-3xl">Edit Lokasi</h1>
+    <div class="bg-white shadow-sm rounded-xl mt-4">
+        <form action="{{ route('locations.update', $location->id) }}" method="POST" enctype="multipart/form-data" autocomplete="off">
+            @csrf
+            @method('PUT') <!-- Method untuk update -->
+            <div class="grid grid-cols-6 px-5 pt-5">
+                <!-- Nama Lokasi -->
+                <div class="px-5 pt-5 col-span-6">
+                    <label class="font-weight-bold" for="city">Kota</label>
+                    <input type="text" class="w-full border-gray-400 rounded @error('city') is-invalid @enderror" name="city" id="city" value="{{ old('city', $location->city) }}" placeholder="Masukkan Nama Kota">
+                    @error('city')
+                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <!-- Negara -->
+                <div class="px-5 pt-5 col-span-6">
+                    <label class="font-weight-bold" for="country">Negara</label>
+                    <input type="text" class="w-full border-gray-400 rounded @error('country') is-invalid @enderror" name="country" id="country" value="{{ old('country', $location->country) }}" placeholder="Masukkan Nama Negara">
+                    @error('country')
+                        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="px-5 pt-5 col-span-6 flex justify-end">
+                    <button type="submit" class="bg-blue-500 px-3 py-2 rounded me-3 mb-3 text-white w-full">Update</button>
+                    <a href="{{ route('locations.index') }}" class="bg-gray-400 px-3 py-2 rounded mb-3 text-white w-full text-center">Batal</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+@endsection

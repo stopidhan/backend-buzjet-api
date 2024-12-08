@@ -13,12 +13,12 @@ class Package extends Model
 
     public function destinations()
     {
-        return $this->belongsToMany(Destination::class, 'package_destinations');
+        return $this->belongsToMany(Destination::class, 'package_destinations',  'package_id', 'destination_id');
     }
 
     public function hotels()
     {
-        return $this->belongsToMany(Hotel::class, 'package_hotels');
+        return $this->belongsToMany(Hotel::class, 'package_hotels', 'package_id', 'hotel_id');
     }
 
     public function bookings()

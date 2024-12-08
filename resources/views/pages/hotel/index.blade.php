@@ -26,7 +26,7 @@
                     <tr class="border-b">
                         <td class="ps-6 p-3">{{ $loop->iteration }}</td>
                         <td class="p-3">{{ $hotel->name }}</td>
-                        <td class="p-3">{{ $hotel->location->city ?? "Unknown" }}, {{ $hotel->location->country ?? "Unknown" }}</td>
+                        <td class="p-3">{{ $hotel->location->city ?? "Unknown" }}, {{ $hotel->location->province ?? "Unknown" }}</td>
                         <td class="p-3">Rp {{ number_format($hotel->price_per_night, 0, ',', '.') }}</td>
                         <td class="p-3">{{ number_format($hotel->rating, 2, '.', '') }}</td>
                         <td class="p-3">

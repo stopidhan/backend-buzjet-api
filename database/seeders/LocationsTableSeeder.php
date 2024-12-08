@@ -10,23 +10,23 @@ class LocationsTableSeeder extends Seeder
     public function run()
     {
         Location::create([
-            'city' => 'Bali',
-            'country' => 'Indonesia',
+            'city' => 'Denpasar',
+            'province' => 'Bali',
         ]);
 
         Location::create([
-            'city' => 'Jakarta',
-            'country' => 'Indonesia',
+            'city' => 'Jakarta Pusat',
+            'province' => 'DKI Jakarta',
         ]);
 
         Location::create([
-            'city' => 'Yogyakarta',
-            'country' => 'Indonesia',
+            'city' => 'Sleman',
+            'province' => 'DIY',
         ]);
 
         Location::create([
             'city' => 'Bandung',
-            'country' => 'Indonesia',
+            'province' => 'Jawa Barat',
         ]);
     }
 }

@@ -29,7 +29,7 @@
                             <img src="{{ asset('/storage/destinations/'.$destination->img) }}" class="rounded mx-auto" style="width: 150px" alt="{{ $destination->name }}">
                         </td>
                         <td class="p-3">{{ $destination->name }}</td>
-                        <td class="p-3">{{ $destination->location->city ?? 'Unknown' }}, {{ $destination->location->country ?? 'Unknown' }}</td>
+                        <td class="p-3">{{ $destination->location->city ?? 'Unknown' }}, {{ $destination->location->province ?? 'Unknown' }}</td>
                         <td class="p-3">{{ $destination->description }}</td>
                         <td class="p-3">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('destinations.destroy', $destination->id) }}" method="POST" class="my-3">

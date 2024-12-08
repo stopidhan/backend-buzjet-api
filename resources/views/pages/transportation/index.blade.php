@@ -26,7 +26,7 @@
                     <tr class="border-b">
                         <td class="ps-6 *:p-3">{{ $loop->iteration }}</td>
                         <td class="p-3">{{ $transportation->name }}</td>
-                        <td class="p-3">{{ $transportation->location->city ?? 'Unknown' }}, {{ $transportation->location->country ?? 'Unknown' }}</td>
+                        <td class="p-3">{{ $transportation->location->city ?? 'Unknown' }}, {{ $transportation->location->province ?? 'Unknown' }}</td>
                         <td class="p-3">{{ $transportation->type }}</td>
                         <td class="p-3">{{ $transportation->provider }}</td>
                         <td class="p-3">

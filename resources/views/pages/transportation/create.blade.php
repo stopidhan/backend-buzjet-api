@@ -61,7 +61,7 @@
                                     <select name="location_id" id="location_id" class="form-control">
                                         <option value="">Pilih Lokasi</option>
                                         @foreach ($locations as $location)
-                                            <option value="{{ $location->id }}">{{ $location->city }},  {{ $location->country }}</option>
+                                            <option value="{{ $location->id }}">{{ $location->city }},  {{ $location->province }}</option>
                                         @endforeach
                                     </select>
 

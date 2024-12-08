@@ -10,19 +10,19 @@ class HotelsTableSeeder extends Seeder
 {
     public function run()
     {
-        $bali = Location::where('city', 'Bali')->first();
-        $jakarta = Location::where('city', 'Jakarta')->first();
+        $Denpasar = Location::where('city', 'Denpasar')->first();
+        $jakarta = Location::where('city', 'Jakarta pusat')->first();
 
         Hotel::create([
-            'name' => 'Grand Bali Hotel',
-            'location_id' => $bali->id,
+            'name' => 'Grand Denpasar Hotel',
+            'location_id' => $Denpasar->id,
             'price_per_night' => 500000,
             'rating' => 4.5,
         ]);
 
         Hotel::create([
-            'name' => 'Bali Beach Resort',
-            'location_id' => $bali->id,
+            'name' => 'Denpasar Beach Resort',
+            'location_id' => $Denpasar->id,
             'price_per_night' => 700000,
             'rating' => 4.8,
         ]);

@@ -26,7 +26,7 @@
                         <option value="">Pilih Lokasi</option>
                         @foreach ($locations as $location)
                             <option value="{{ $location->id }}" {{ old('location_id', $destination->location_id) == $location->id ? 'selected' : '' }}>
-                                {{ $location->city }}, {{ $location->country }}
+                                {{ $location->city }}, {{ $location->province }}
                             </option>
                         @endforeach
                     </select>

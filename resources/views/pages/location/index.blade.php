@@ -15,7 +15,7 @@
                 <tr>
                     <th scope="col" class="text-white p-3 ps-6 rounded-tl text-left">No</th>
                     <th scope="col" class="text-white p-3 text-left ">Kota</th>
-                    <th scope="col" class="text-white p-3 text-left">Negara</th>
+                    <th scope="col" class="text-white p-3 text-left">Provinsi</th>
                     <th scope="col" style="width: 15%" class="text-white p-3 rounded-tr text-left">Aksi</th>
                 </tr>
             </thead>
@@ -24,7 +24,7 @@
                     <tr class="border-b">
                         <td class="ps-6 p-3">{{ $loop->iteration }}</td>
                         <td class="p-3">{{ $location->city }}</td>
-                        <td class="p-3">{{ $location->country }}</td>
+                        <td class="p-3">{{ $location->province }}</td>
                         <td class="p-3">
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('locations.destroy', $location->id) }}" method="POST" class="my-3">
                                 <a href="{{ route('locations.edit', $location->id) }}" class="bg-amber-500 rounded px-3 py-2 me-3 text-white">Ubah</a>

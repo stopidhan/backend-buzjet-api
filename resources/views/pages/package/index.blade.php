@@ -14,6 +14,8 @@
                 <th scope="col" class="text-white p-3 ps-6 rounded-tl text-left">No</th>
                 <th scope="col" class="text-white p-3 text-left">Nama</th>
                 <th scope="col" class="text-white p-3 text-left">Deskripsi</th>
+                <th scope="col" class="text-white p-3 text-left">Destinasi</th>
+                <th scope="col" class="text-white p-3 text-left">Hotel</th>
                 <th scope="col" class="text-white p-3 text-left">Harga</th>
                 <th scope="col" class="text-white p-3 text-left">Durasi</th>
                 <th scope="col" class="text-white p-3 text-left">Malam</th>
@@ -28,6 +30,31 @@
                     <td class="ps-6 p-3">{{ $loop->iteration }}</td>
                     <td class="p-3">{{ $package->name }}</td>
                     <td class="p-3">{{ $package->description }}</td>
+                    <!-- Destinations -->
+                    <td class="p-3">
+                        @if($package->destinations->isNotEmpty())
+                            <ul>
+                                @foreach ($package->destinations as $destination)
+                                    <li>{{ $destination->name }}</li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <span>Tidak ada destinasi</span>
+                        @endif
+                    </td>
+
+                    <!-- Hotels -->
+                    <td class="p-3">
+                        @if($package->hotels->isNotEmpty())
+                            <ul>
+                                @foreach ($package->hotels as $hotel)
+                                    <li>{{ $hotel->name }}</li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <span>Tidak ada hotel</span>
+                        @endif
+                    </td>
                     <td class="p-3">{{ "Rp" . number_format($package->price,2,',','.') }}</td>
                     <td class="p-3">{{ $package->duration }}</td>
                     <td class="p-3">{{ $package->night }}</td>

@@ -22,7 +22,7 @@ class LocationController extends Controller
     {
         $request->validate([
             'city' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
         ]);
 
         Location::create($request->all());
@@ -38,7 +38,7 @@ class LocationController extends Controller
     {
         $request->validate([
             'city' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
         ]);
 
         $location->update($request->all());

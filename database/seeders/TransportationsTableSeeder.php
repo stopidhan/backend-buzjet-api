@@ -10,15 +10,15 @@ class TransportationsTableSeeder extends Seeder
 {
     public function run()
     {
-        $bali = Location::where('city', 'Bali')->first();
-        $jakarta = Location::where('city', 'Jakarta')->first();
+        $Denpasar = Location::where('city', 'Denpasar')->first();
+        $jakarta = Location::where('city', 'Jakarta Pusat')->first();
 
         Transportation::create([
             'type' => 'Bus',
-            'name' => 'Bali Shuttle Service',
+            'name' => 'Denpasar Shuttle Service',
             'price' => 150000,
-            'provider' => 'Bali Transport Co.',
-            'location_id' => $bali->id,
+            'provider' => 'Denpasar Transport Co.',
+            'location_id' => $Denpasar->id,
         ]);
 
         Transportation::create([
@@ -26,7 +26,7 @@ class TransportationsTableSeeder extends Seeder
             'name' => 'Luxury Car Hire',
             'price' => 500000,
             'provider' => 'Luxury Car Rentals',
-            'location_id' => $bali->id,
+            'location_id' => $Denpasar->id,
         ]);
 
         Transportation::create([

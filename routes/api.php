@@ -2,9 +2,11 @@
 
 use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PackageController;
+use App\Http\Controllers\Api\PackageController;
+use App\Http\Controllers\Api\HotelController;
 use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\DestinationController;
+use App\Http\Controllers\Api\TransportationController;
 
 Route::middleware(['api', 'throttle:api'])->group(function () {
     // Route::get('/hotels-by-destination/{destinationId}', [PackageController::class, 'getHotelsByDestination']);
@@ -21,4 +23,8 @@ Route::middleware(['api', 'throttle:api'])->group(function () {
 
     Route::resource('/locations', LocationController::class);
     Route::resource('/destinations', DestinationController::class);
+    Route::resource('/transportations', TransportationController::class);
+    Route::resource('/hotels', HotelController::class);
+    Route::resource('/packages', PackageController::class);
+
 });

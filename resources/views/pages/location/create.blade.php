@@ -17,8 +17,8 @@
                 </div>
 
                 <div class="px-5 pt-5 col-span-6">
-                    <label class="font-weight-bold" for="province">Negara</label>
-                    <input type="text" class="w-full border-gray-400 rounded @error('province') is-invalid @enderror" name="province" id="province" value="{{ old('province') }}" placeholder="Masukkan Nama Negara">
+                    <label class="font-weight-bold" for="province">Provinsi</label>
+                    <input type="text" class="w-full border-gray-400 rounded @error('province') is-invalid @enderror" name="province" id="province" value="{{ old('province') }}" placeholder="Masukkan Nama Provinsi">
                     @error('province')
                         <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror

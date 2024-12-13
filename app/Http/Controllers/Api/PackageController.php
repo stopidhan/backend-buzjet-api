@@ -7,8 +7,62 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @OA\Info(
+ *     version="1.0.0",
+ *     title="BuzJet API Documentation",
+ *     description="Swagger documentation for BuzJet API"
+ * )
+ *
+ * @OA\Server(
+ *     url="http://localhost:8000/api"
+ * )
+ *
+ * @OA\Schema(
+ *     schema="Package",
+ *     type="object",
+ *     @OA\Property(property="id", type="integer"),
+ *     @OA\Property(property="name", type="string"),
+ *     @OA\Property(property="description", type="string"),
+ *     @OA\Property(property="price", type="number"),
+ *     @OA\Property(property="duration", type="integer"),
+ *     @OA\Property(property="night", type="integer"),
+ *     @OA\Property(property="capacity", type="integer"),
+ *     @OA\Property(property="created_by", type="integer"),
+ *     @OA\Property(property="destinations", type="array", @OA\Items(type="object")),
+ *     @OA\Property(property="hotels", type="array", @OA\Items(type="object")),
+ *     @OA\Property(property="user", type="object")
+ * )
+ *
+ * @OA\Schema(
+ *     schema="PackageInput",
+ *     type="object",
+ *     @OA\Property(property="name", type="string"),
+ *     @OA\Property(property="description", type="string"),
+ *     @OA\Property(property="price", type="number"),
+ *     @OA\Property(property="duration", type="integer"),
+ *     @OA\Property(property="night", type="integer"),
+ *     @OA\Property(property="capacity", type="integer"),
+ *     @OA\Property(property="created_by", type="integer"),
+ *     @OA\Property(property="destination_ids", type="array", @OA\Items(type="integer")),
+ *     @OA\Property(property="hotel_ids", type="array", @OA\Items(type="integer"))
+ * )
+ */
 class PackageController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/packages",
+     *     tags={"Packages"},
+     *     summary="Get list of packages",
+     *     description="Retrieve all packages along with their related data",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(type="array", @OA\Items(ref="#/components/schemas/Package"))
+     *     )
+     * )
+     */
     public function index()
     {
         $packages = Package::with(['destinations', 'hotels', 'user'])->get();
@@ -19,6 +73,28 @@ class PackageController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Post(
+     *     path="/packages",
+     *     tags={"Packages"},
+     *     summary="Create a new package",
+     *     description="Add a new package along with destinations and hotels",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/PackageInput")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Package created successfully",
+     *         @OA\JsonContent(ref="#/components/schemas/Package")
+     *     ),
+     *     @OA\Response(
+     *         response=422,
+     *         description="Validation error",
+     *         @OA\JsonContent(type="object", @OA\Property(property="errors", type="array", @OA\Items(type="string")))
+     *     )
+     * )
+     */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -56,6 +132,30 @@ class PackageController extends Controller
         ], 201);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/packages/{id}",
+     *     tags={"Packages"},
+     *     summary="Get package by ID",
+     *     description="Retrieve a specific package along with its related data",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the package",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/Package")
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Package not found",
+     *     )
+     * )
+     */
     public function show(string $id)
     {
         $package = Package::with(['destinations', 'hotels', 'user'])->find($id);
@@ -74,6 +174,34 @@ class PackageController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Put(
+     *     path="/packages/{id}",
+     *     tags={"Packages"},
+     *     summary="Update package by ID",
+     *     description="Update the details of an existing package",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the package to update",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=false,
+     *         @OA\JsonContent(ref="#/components/schemas/PackageInput")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Package updated successfully",
+     *         @OA\JsonContent(ref="#/components/schemas/Package")
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Package not found",
+     *     )
+     * )
+     */
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
@@ -124,6 +252,29 @@ class PackageController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/packages/{id}",
+     *     tags={"Packages"},
+     *     summary="Delete package by ID",
+     *     description="Remove a package and its relationships from the database",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the package to delete",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Package deleted successfully"
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Package not found",
+     *     )
+     * )
+     */
     public function destroy(string $id)
     {
         $package = Package::findOrFail($id);

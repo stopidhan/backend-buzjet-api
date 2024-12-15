@@ -27,7 +27,7 @@ class DestinationController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/destinations",
+     *     path="/destinations",
      *     summary="Get list of destinations",
      *     tags={"Destinations"},
      *     @OA\Response(
@@ -56,7 +56,7 @@ class DestinationController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/destinations",
+     *     path="/destinations",
      *     summary="Create a new destination",
      *     tags={"Destinations"},
      *     @OA\RequestBody(
@@ -117,7 +117,7 @@ class DestinationController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/destinations/{id}",
+     *     path="/destinations/{id}",
      *     summary="Get a destination by ID",
      *     tags={"Destinations"},
      *     @OA\Parameter(
@@ -167,7 +167,7 @@ class DestinationController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/destinations/{id}",
+     *     path="/destinations/{id}",
      *     summary="Update a destination",
      *     tags={"Destinations"},
      *     @OA\Parameter(
@@ -255,7 +255,7 @@ class DestinationController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/destinations/{id}",
+     *     path="/destinations/{id}",
      *     summary="Delete a destination",
      *     tags={"Destinations"},
      *     @OA\Parameter(

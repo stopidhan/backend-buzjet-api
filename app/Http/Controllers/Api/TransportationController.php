@@ -30,7 +30,7 @@ class TransportationController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/transportations",
+     *     path="/transportations",
      *     summary="Get list of transportations",
      *     tags={"Transportation"},
      *     @OA\Response(
@@ -57,7 +57,7 @@ class TransportationController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/transportations",
+     *     path="/transportations",
      *     summary="Create a new transportations",
      *     tags={"Transportation"},
      *     @OA\RequestBody(
@@ -120,7 +120,7 @@ class TransportationController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/transportations/{id}",
+     *     path="/transportations/{id}",
      *     summary="Get a transportation by ID",
      *     tags={"Transportation"},
      *     @OA\Parameter(
@@ -170,7 +170,7 @@ class TransportationController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/transportations/{id}",
+     *     path="/transportations/{id}",
      *     summary="Update a transportation ",
      *     tags={"Transportation"},
      *     @OA\Parameter(
@@ -258,7 +258,7 @@ class TransportationController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/transportations/{id}",
+     *     path="/transportations/{id}",
      *     summary="Delete a transportation",
      *     tags={"Transportation"},
      *     @OA\Parameter(

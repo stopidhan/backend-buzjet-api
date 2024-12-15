@@ -33,20 +33,6 @@ use Illuminate\Support\Facades\Validator;
  *     @OA\Property(property="hotels", type="array", @OA\Items(type="object")),
  *     @OA\Property(property="user", type="object")
  * )
- *
- * @OA\Schema(
- *     schema="PackageInput",
- *     type="object",
- *     @OA\Property(property="name", type="string"),
- *     @OA\Property(property="description", type="string"),
- *     @OA\Property(property="price", type="number"),
- *     @OA\Property(property="duration", type="integer"),
- *     @OA\Property(property="night", type="integer"),
- *     @OA\Property(property="capacity", type="integer"),
- *     @OA\Property(property="created_by", type="integer"),
- *     @OA\Property(property="destination_ids", type="array", @OA\Items(type="integer")),
- *     @OA\Property(property="hotel_ids", type="array", @OA\Items(type="integer"))
- * )
  */
 class PackageController extends Controller
 {
@@ -81,7 +67,18 @@ class PackageController extends Controller
      *     description="Add a new package along with destinations and hotels",
      *     @OA\RequestBody(
      *         required=true,
-     *         @OA\JsonContent(ref="#/components/schemas/PackageInput")
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="name", type="string"),
+     *             @OA\Property(property="description", type="string"),
+     *             @OA\Property(property="price", type="number"),
+     *             @OA\Property(property="duration", type="integer"),
+     *             @OA\Property(property="night", type="integer"),
+     *             @OA\Property(property="capacity", type="integer"),
+     *             @OA\Property(property="created_by", type="integer"),
+     *             @OA\Property(property="destination_ids", type="array", @OA\Items(type="integer")),
+     *             @OA\Property(property="hotel_ids", type="array", @OA\Items(type="integer"))
+     *         )
      *     ),
      *     @OA\Response(
      *         response=201,
@@ -189,7 +186,18 @@ class PackageController extends Controller
      *     ),
      *     @OA\RequestBody(
      *         required=false,
-     *         @OA\JsonContent(ref="#/components/schemas/PackageInput")
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="name", type="string"),
+     *             @OA\Property(property="description", type="string"),
+     *             @OA\Property(property="price", type="number"),
+     *             @OA\Property(property="duration", type="integer"),
+     *             @OA\Property(property="night", type="integer"),
+     *             @OA\Property(property="capacity", type="integer"),
+     *             @OA\Property(property="created_by", type="integer"),
+     *             @OA\Property(property="destination_ids", type="array", @OA\Items(type="integer")),
+     *             @OA\Property(property="hotel_ids", type="array", @OA\Items(type="integer"))
+     *         )
      *     ),
      *     @OA\Response(
      *         response=200,

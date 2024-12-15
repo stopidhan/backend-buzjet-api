@@ -27,7 +27,7 @@ class HotelController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/api/hotels",
+     *     path="/hotels",
      *     summary="Get list of hotels",
      *
      *     tags={"Hotels"},
@@ -66,7 +66,7 @@ class HotelController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/hotels",
+     *     path="/hotels",
      *     summary="Create a new hotel",
      *     tags={"Hotels"},
      *     @OA\RequestBody(
@@ -158,7 +158,7 @@ class HotelController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/hotels/{id}",
+     *     path="/hotels/{id}",
      *     summary="Get a hotel by ID",
      *     tags={"Hotels"},
      *     @OA\Parameter(
@@ -225,7 +225,7 @@ class HotelController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/hotels/{id}",
+     *     path="/hotels/{id}",
      *     summary="Update a hotel by ID",
      *     tags={"Hotels"},
      *     @OA\Parameter(
@@ -350,7 +350,7 @@ class HotelController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/hotels/{id}",
+     *     path="/hotels/{id}",
      *     summary="Delete a hotel by ID",
      *     tags={"Hotels"},
      *     @OA\Parameter(

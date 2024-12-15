@@ -47,7 +47,7 @@ class LocationController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/locations",
+     *     path="/locations",
      *     summary="Get list of locations",
      *     tags={"Locations"},
      *     @OA\Response(
@@ -75,7 +75,7 @@ class LocationController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/locations",
+     *     path="/locations",
      *     summary="Create a new location",
      *     tags={"Locations"},
      *     @OA\RequestBody(
@@ -132,7 +132,7 @@ class LocationController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/locations/{id}",
+     *     path="/locations/{id}",
      *     summary="Get a location by ID",
      *     tags={"Locations"},
      *     @OA\Parameter(
@@ -182,7 +182,7 @@ class LocationController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/api/locations/{id}",
+     *     path="/locations/{id}",
      *     summary="Update a location by ID",
      *     tags={"Locations"},
      *     @OA\Parameter(
@@ -263,7 +263,7 @@ class LocationController extends Controller
 
     /**
      * @OA\Delete(
-     *     path="/api/locations/{id}",
+     *     path="/locations/{id}",
      *     summary="Delete a location by ID",
      *     tags={"Locations"},
      *     @OA\Parameter(

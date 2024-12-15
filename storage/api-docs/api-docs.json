@@ -11,13 +11,13 @@
         }
     ],
     "paths": {
-        "/api/destinations": {
+        "/destinations": {
             "get": {
                 "tags": [
                     "Destinations"
                 ],
                 "summary": "Get list of destinations",
-                "operationId": "b80fe9d6eda02416e253203818579e20",
+                "operationId": "0dcbcf4884f7d3dcf1b3b7bdcdf4fa09",
                 "responses": {
                     "200": {
                         "description": "Successful operation",
@@ -50,7 +50,7 @@
                     "Destinations"
                 ],
                 "summary": "Create a new destination",
-                "operationId": "876ef5b71552238df53670527551180f",
+                "operationId": "3d20c650b2f31dffec1fc1c164a99cb3",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -121,13 +121,13 @@
                 }
             }
         },
-        "/api/destinations/{id}": {
+        "/destinations/{id}": {
             "get": {
                 "tags": [
                     "Destinations"
                 ],
                 "summary": "Get a destination by ID",
-                "operationId": "1c2347ff4f87461d9663276ecc431b4d",
+                "operationId": "971e0403a395beee44cfb6729be9b9ea",
                 "parameters": [
                     {
                         "name": "id",
@@ -185,7 +185,7 @@
                     "Destinations"
                 ],
                 "summary": "Update a destination",
-                "operationId": "535a0a829789b5c1dd2405af38b4097c",
+                "operationId": "575f7fecf1a33a3d15deb64ba797c8d8",
                 "parameters": [
                     {
                         "name": "id",
@@ -288,7 +288,7 @@
                     "Destinations"
                 ],
                 "summary": "Delete a destination",
-                "operationId": "4dd39acee9547412ff72eb2a403c2129",
+                "operationId": "8439980b9b9b027092400f0223edcbe0",
                 "parameters": [
                     {
                         "name": "id",
@@ -339,13 +339,13 @@
                 }
             }
         },
-        "/api/hotels": {
+        "/hotels": {
             "get": {
                 "tags": [
                     "Hotels"
                 ],
                 "summary": "Get list of hotels",
-                "operationId": "7e8239d84013343522dd6d84f82ce840",
+                "operationId": "af0e00ce4ec25a820f996b051821970a",
                 "responses": {
                     "200": {
                         "description": "Successful operation",
@@ -378,7 +378,7 @@
                     "Hotels"
                 ],
                 "summary": "Create a new hotel",
-                "operationId": "6f17f3f085dab45c6b8cc8885e15fbc2",
+                "operationId": "6b951dcd89538a7a2b1125296fab66f6",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -449,13 +449,13 @@
                 }
             }
         },
-        "/api/hotels/{id}": {
+        "/hotels/{id}": {
             "get": {
                 "tags": [
                     "Hotels"
                 ],
                 "summary": "Get a hotel by ID",
-                "operationId": "42ab12b8021f7fe329cd004cb4b277a3",
+                "operationId": "87a4f20b9924af29cc4408fc690ae6b3",
                 "parameters": [
                     {
                         "name": "id",
@@ -513,7 +513,7 @@
                     "Hotels"
                 ],
                 "summary": "Update a hotel by ID",
-                "operationId": "a44fb704b73cb56d046374fab72343e5",
+                "operationId": "460b5d7ff52ecbff6346b72e28e363cb",
                 "parameters": [
                     {
                         "name": "id",
@@ -616,7 +616,7 @@
                     "Hotels"
                 ],
                 "summary": "Delete a hotel by ID",
-                "operationId": "7210ab2a9632f21a20ed89f716f54923",
+                "operationId": "0a7d9a6fdfab981b89f8de102a3a1d87",
                 "parameters": [
                     {
                         "name": "id",
@@ -667,13 +667,13 @@
                 }
             }
         },
-        "/api/locations": {
+        "/locations": {
             "get": {
                 "tags": [
                     "Locations"
                 ],
                 "summary": "Get list of locations",
-                "operationId": "4a95f25c1e13530115fd3fd6961b92de",
+                "operationId": "02645c8bfbf14f52457023b2bf782092",
                 "responses": {
                     "200": {
                         "description": "Data berhasil ditemukan",
@@ -706,7 +706,7 @@
                     "Locations"
                 ],
                 "summary": "Create a new location",
-                "operationId": "2e940d1dad83fe7c7fb5a308a7f6d84a",
+                "operationId": "136dd4376518a2984af8999cce9172d7",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -771,13 +771,13 @@
                 }
             }
         },
-        "/api/locations/{id}": {
+        "/locations/{id}": {
             "get": {
                 "tags": [
                     "Locations"
                 ],
                 "summary": "Get a location by ID",
-                "operationId": "5ac0324577506ee36225fdb6a881506c",
+                "operationId": "266f7740af8276e3e13bf34d61fe82a5",
                 "parameters": [
                     {
                         "name": "id",
@@ -835,7 +835,7 @@
                     "Locations"
                 ],
                 "summary": "Update a location by ID",
-                "operationId": "42f75cf2951683141c55565f6c6e10ea",
+                "operationId": "c3b3d44b475a111fdf20cb538cb42219",
                 "parameters": [
                     {
                         "name": "id",
@@ -932,7 +932,7 @@
                     "Locations"
                 ],
                 "summary": "Delete a location by ID",
-                "operationId": "32274c410d9a158665aabbb58f7830ad",
+                "operationId": "b3948f58e6759b42cd7e79a69d13e764",
                 "parameters": [
                     {
                         "name": "id",
@@ -1019,7 +1019,42 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PackageInput"
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "duration": {
+                                        "type": "integer"
+                                    },
+                                    "night": {
+                                        "type": "integer"
+                                    },
+                                    "capacity": {
+                                        "type": "integer"
+                                    },
+                                    "created_by": {
+                                        "type": "integer"
+                                    },
+                                    "destination_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "hotel_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "type": "object"
                             }
                         }
                     }
@@ -1114,7 +1149,42 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/PackageInput"
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "duration": {
+                                        "type": "integer"
+                                    },
+                                    "night": {
+                                        "type": "integer"
+                                    },
+                                    "capacity": {
+                                        "type": "integer"
+                                    },
+                                    "created_by": {
+                                        "type": "integer"
+                                    },
+                                    "destination_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "hotel_ids": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "type": "object"
                             }
                         }
                     }
@@ -1163,13 +1233,13 @@
                 }
             }
         },
-        "/api/transportations": {
+        "/transportations": {
             "get": {
                 "tags": [
                     "Transportation"
                 ],
                 "summary": "Get list of transportations",
-                "operationId": "c6a46a83fea039a7deb4af22a322bbbf",
+                "operationId": "c61e8bb40021577965dbc8e572994f1c",
                 "responses": {
                     "200": {
                         "description": "Data berhasil ditemukan",
@@ -1202,7 +1272,7 @@
                     "Transportation"
                 ],
                 "summary": "Create a new transportations",
-                "operationId": "b425b15ce85d9315887b6c6a7acb924f",
+                "operationId": "5d494fe819e9249bc1c5197d99188a17",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -1276,13 +1346,13 @@
                 }
             }
         },
-        "/api/transportations/{id}": {
+        "/transportations/{id}": {
             "get": {
                 "tags": [
                     "Transportation"
                 ],
                 "summary": "Get a transportation by ID",
-                "operationId": "d36db33ace91d0acb4c4223ce511f937",
+                "operationId": "1f19adf84f669b1eec081f8725ac0300",
                 "parameters": [
                     {
                         "name": "id",
@@ -1340,7 +1410,7 @@
                     "Transportation"
                 ],
                 "summary": "Update a transportation ",
-                "operationId": "d9e4a212d64435b45e79bf0f7dceabb9",
+                "operationId": "68964ff268ff178ebc849b9bf7ab7075",
                 "parameters": [
                     {
                         "name": "id",
@@ -1446,7 +1516,7 @@
                     "Transportation"
                 ],
                 "summary": "Delete a transportation",
-                "operationId": "7e25465720233246b1e9c11b50d5eddf",
+                "operationId": "fd6fffaeda879f6a21b687bfb2ca5366",
                 "parameters": [
                     {
                         "name": "id",
@@ -1628,44 +1698,6 @@
                     },
                     "user": {
                         "type": "object"
-                    }
-                },
-                "type": "object"
-            },
-            "PackageInput": {
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "price": {
-                        "type": "number"
-                    },
-                    "duration": {
-                        "type": "integer"
-                    },
-                    "night": {
-                        "type": "integer"
-                    },
-                    "capacity": {
-                        "type": "integer"
-                    },
-                    "created_by": {
-                        "type": "integer"
-                    },
-                    "destination_ids": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        }
-                    },
-                    "hotel_ids": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        }
                     }
                 },
                 "type": "object"
